@@ -21,7 +21,7 @@ class GoogleMap extends React.Component {
 
   componentDidMount() {
     if(this.props.trip)
-      this.setState({center: {lat: this.props.trip.latitude, lng: this.props.trip.longitude}, address: this.props.trip.end_address})
+      this.setState({center: {lat: this.props.trip.latitude, lng: this.props.trip.longitude}, address: this.props.trip.start_address})
   }
 
   state = {
@@ -65,7 +65,7 @@ class GoogleMap extends React.Component {
     if(this.props.trip) {
       return(
         <div>
-          <h5>Trip Destination: { address }</h5>
+          <h5>Trip Start: { address }</h5>
           <div style={{ height: '500px', width: '450px', margin: '0 auto' }}>
             <GoogleMapReact
               bootstrapURLKeys={{

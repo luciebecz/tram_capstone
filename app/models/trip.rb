@@ -3,7 +3,7 @@ class Trip < ApplicationRecord
  :departure_time, :route_flexibility, :start_address, :end_address, :user_id, :available_seats
 
  belongs_to :user
- has_many :messages
+ has_many :messages, dependent: :destroy
  serialize :rider_ids, Array
  serialize :driver_username, Array
  serialize :rider_username, Array
@@ -21,7 +21,7 @@ class Trip < ApplicationRecord
  after_validation :geocode
 
  def address
-   end_address
+   start_address
  end
 
  def end_full_street_address

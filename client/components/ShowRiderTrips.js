@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { removeRider } from '../actions/trips';
 import { getUser } from '../actions/user';
+import GoogleMap from './GoogleMap';
 
 class ShowRiderTrips extends React.Component {
 
@@ -64,6 +65,7 @@ render() {
       <ul className="collection">
       { this.messages() }
       </ul>
+        <GoogleMap trip={trip} />
       </div>
     );
   } else {

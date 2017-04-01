@@ -44,9 +44,6 @@ class Trips extends React.Component {
                   <br />
                   <h6>Available Seats Left: {trip.available_seats}</h6>
                   <br />
-                  <div>
-                    <GoogleMap trip={trip} />
-                  </div>
                   <button onClick={ () =>{this.joinTrip(trip.id)} } className='btn blue-grey darken-3'>Join This Trip</button>
                 </span>
               </div>

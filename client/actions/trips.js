@@ -103,7 +103,7 @@ export const removeRider = (id) => {
       dataType: 'JSON'
     }).done( trip => {
       dispatch({ type: 'REMOVE_RIDER', trip });
-      window.location.reload()
+      browserHistory.push('/user_profile')
       dispatch(setFlash("You Have Cancelled Your Pickup", 'success'))
     }).fail( data => {
       dispatch(setFlash("Cancel Pickup Was Unsuccessfull", 'error'))
