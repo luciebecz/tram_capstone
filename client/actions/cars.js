@@ -55,7 +55,6 @@ export const deleteCar = (id) => {
       url: `/api/cars/${id}`,
       type: 'DELETE'
     }).done( () => {
-      window.confirm('Are You Sure You Want To Delete This Car?')
       dispatch({ type: 'DELETE_CAR', id });
       dispatch(setFlash('Car Deleted', 'success'));
     }).fail( data => {

@@ -45,7 +45,6 @@ export const deleteTrip = (id) => {
      dataType: 'JSON'
    }).done( id => {
      dispatch({ type: 'DELETE_TRIP', id });
-     window.confirm('Are You Sure You Want To Delete This Trip?');
      browserHistory.push('/user_profile');
      dispatch(setFlash("You Have Deleted Your Trip", 'success'))
    }).fail( data => {

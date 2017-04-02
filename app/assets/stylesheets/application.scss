@@ -121,9 +121,22 @@ p {
   text-align: center;
 }
 
+
+/*>>>>>>>>>>>>>>>>>NAVBAR>>>>>>>>>>>>>>>>>>>*/
 #nav {
   padding-left: 20px;
+  padding-top: 7px;
+  height: 80px;
+  background-color: #37474f;
 }
+
+.nav-logo {
+  padding-bottom: 3px;
+  width: 200px;
+  height: 72px;
+  color: white;
+}
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
 .trip_loop {
   float: right;
@@ -222,3 +235,21 @@ p {
 .input {
   font-size: 50px;
 }
+
+/*>>>>>>>>>>>TRIP SHOW PAGE FOR DRIVER >>>>>>>>>>>>>>*/
+
+.trip_messages {
+  float: right;
+  width: 40%;
+  margin-top: 60px;
+}
+
+.trip_details {
+  float: left;
+  width: 45%
+}
+
+.trip_map {
+  float: left;
+}
+
