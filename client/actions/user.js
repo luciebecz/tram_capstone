@@ -19,12 +19,12 @@ export const deleteUser = (router) => {
   return (dispatch) => {
     $.ajax({
       url: '/api/delete_user',
-      type: 'DELETE', 
+      type: 'DELETE',
       dataType: 'JSON'
     }).done( user => {
       dispatch({ type: 'DELETE_USER' });
       router.push('/');
-      dispatch(setFlash('You Have Succesfully Deleted Your Trip', 'success'))
+      dispatch(setFlash('You Have Succesfully Deleted Your Account', 'success'))
     }).fail( data => {
       dispatch(setFlash('Error Deleting User', 'error'))
     })
@@ -36,7 +36,7 @@ export const updateUser = (first_name, last_name) => {
     $.ajax({
       url: '/api/update_user',
       type: 'PUT',
-      dataType: 'JSON', 
+      dataType: 'JSON',
       data: { user: { first_name, last_name }}
     }).done( user => {
       dispatch({ type: 'UPDATE_USER', user });

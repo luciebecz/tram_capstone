@@ -12,5 +12,3 @@ json.trips @trips do |trip|
   json.available_seats trip.available_seats
   json.trip_car trip.trip_car
 end
-
-json.total_pages @trips.total_pages

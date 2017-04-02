@@ -24,8 +24,9 @@ class Trips extends React.Component {
 
   render() {
     this.setCollapsible()
+    let rider_ids = this.props.rider_ids
     let trips = this.props.trips.map( trip => {
-      if(trip.user_id !== this.props.user.id  && trip.available_seats != 0) {
+      if(trip.user_id !== this.props.user.id  && trip.available_seats != 0  && !trip.rider_ids.includes(this.props.user.id)) {
         return (
           <ul className="collapsible" data-collapsible="accordion">
             <li>
@@ -33,19 +34,19 @@ class Trips extends React.Component {
                 <b className='blue-grey-text text-darken-1'>{trip.name}</b>
                 <h6 className='toggle'>Click to view details</h6>
                 <br />
-                <h6>Date: {trip.date}</h6>
+                <h6><b>Date: {trip.date}</b></h6>
               </div>
               <div className="collapsible-body">
                 <span>
-                  <h6>Resort/Drop Off Location: {trip.end_address}</h6>
+                  <h6><b>Resort/Drop Off Location:</b> {trip.end_address}</h6>
                   <br />
-                  <h6>Pickup Time: {trip.pickup_time}</h6>
+                  <h6><b>Pickup Time:</b> {trip.pickup_time}</h6>
                   <br />
-                  <h6>Departure Time: {trip.departure_time}</h6>
+                  <h6><b>Departure Time:</b> {trip.departure_time}</h6>
                   <br />
-                  <h6>Pickup Location: {trip.start_address}</h6>
+                  <h6><b>Pickup Location:</b> {trip.start_address}</h6>
                   <br />
-                  <h6>Available Seats Left: {trip.available_seats}</h6>
+                  <h6><b>Available Seats Left:</b> {trip.available_seats}</h6>
                   <br />
                   <button onClick={ () =>{this.joinTrip(trip.id)} } className='btn blue-grey darken-3'>Join This Trip</button>
                 </span>
@@ -59,10 +60,14 @@ class Trips extends React.Component {
       return (
         <div>
           <SearchTrips />
+          <hr />
+          <div className='container'>
+          <h5><b>Current Available Trips:</b></h5>
           {trips}
         </div>
+        </div>
       )
-    } else {
+    }  else {
       return (
         <div>
         <h5>Your search did not find any available trips.

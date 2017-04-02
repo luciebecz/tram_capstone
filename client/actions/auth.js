@@ -22,7 +22,7 @@ export const handleLogin = (email, password) => {
       dispatch(login(user));
       browserHistory.push('/user_profile')
     }).fail( data => {
-      dispatch(setFlash('Error Logging In', 'error'));
+      dispatch(setFlash('Incorrect Username and/or Email', 'error'));
     });
   }
 }
@@ -66,7 +66,7 @@ export const handleSignUp = (email, password, username, first_name, last_name) =
       url: '/users',
       type: 'POST',
       dataType: 'JSON',
-      data: { user: { email, password, username, first_name, last_name } } 
+      data: { user: { email, password, username, first_name, last_name } }
     }).done( user => {
       dispatch(login(user));
       browserHistory.push('/user_profile');
