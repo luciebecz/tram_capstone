@@ -106,8 +106,8 @@ export const removeRider = (id) => {
       browserHistory.push('/user_profile')
       dispatch(setFlash("You Have Cancelled Your Pickup", 'success'))
     }).fail( data => {
-      dispatch(setFlash("Cancel Pickup Was Unsuccessfull", 'error'))
-      console.log(data);
+      dispatch(setFlash("Trip was already deleted by driver", 'error'))
+      browserHistory.push('/user_profile')
     })
   }
 }

@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+  skip_before_filter  :verify_authenticity_token
   def logged_in_user
     if current_user
       render json: current_user
@@ -8,19 +9,19 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    current_user.update(user_params) 
+    current_user.update(user_params)
     # binding.pry
     render json: current_user
-  end 
+  end
 
-  def destroy 
+  def destroy
     current_user.destroy
-    render json: current_user 
-  end 
+    render json: current_user
+  end
 
-  private 
+  private
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :username, :email)
-  end 
+  end
 end

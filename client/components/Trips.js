@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from 'react-router';
 import { joinATrip } from '../actions/trips';
 import SearchTrips from './SearchTrips';
-import GoogleMap from './GoogleMap';
+
 
 class Trips extends React.Component {
 

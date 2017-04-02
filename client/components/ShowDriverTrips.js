@@ -75,12 +75,11 @@ class ShowDriverTrips extends React.Component {
         <p>Route Flexibility: {trip.route_flexibility}</p>
         <p>Start Address: {trip.start_address}</p>
         <p>End Address: {trip.end_address}</p>
-        <p>Seats Available: {trip.available_seats}</p>
-        <p>Joined Rider Usernames: {trip.rider_username.map( (name, i) => { return <li key={i}> {name}</li>; })}</p>
+        <p>Other Riders: {trip.rider_username.map( (name, i) => { return <li key={i}> {name}</li>; })}</p>
         <br />
-        <h5>Chat With Your Fellow Riders Here</h5>
+        <h4>Message other riders:</h4>
         <form ref={n => this.form = n } onSubmit={this.submitMessage}>
-          <input ref={ n => this.message = n } />
+          <input ref={ n => this.message = n } required placeholder='Type message here and hit enter to send' />
         </form>
         <ul className="collection">
           { this.messages() }

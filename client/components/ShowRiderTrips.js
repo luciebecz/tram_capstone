@@ -56,15 +56,16 @@ render() {
       <p>Route Flexibility: {trip.route_flexibility}</p>
       <p>Start Address: {trip.start_address}</p>
       <p>End Address: {trip.end_address}</p>
-      <p>Seats Available: {trip.available_seats}</p>
-      <h6>Contact Driver: {trip.driver_username}</h6>
       <button onClick={ () => {this.cancelRide(trip.id)} }className='btn grey darken-2'>Cancel Pickup</button>
+      <h4>Message driver and other riders:</h4>
       <form ref={n => this.form = n } onSubmit={this.submitMessage}>
-      <input ref={ n => this.message = n } />
+      <input ref={ n => this.message = n } required placeholder='Type message here and hit enter to send' />
       </form>
-      <ul className="collection">
-      { this.messages() }
-      </ul>
+      <div>
+        <ul className="collection">
+          { this.messages() }
+        </ul>
+      </div>
         <GoogleMap trip={trip} />
       </div>
     );

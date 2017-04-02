@@ -65,7 +65,7 @@ class GoogleMap extends React.Component {
     if(this.props.trip) {
       return(
         <div>
-          <h5>Trip Start: { address }</h5>
+          <h5 className='center'>Trip Start Location</h5>
           <div style={{ height: '500px', width: '450px', margin: '0 auto' }}>
             <GoogleMapReact
               bootstrapURLKeys={{
@@ -88,7 +88,7 @@ class GoogleMap extends React.Component {
         </div>
       );
     } else {
-      return(<div>Loading</div>)
+      return(<div>Trip Start Address Not Found, Please Re-enter Trip Start Address</div>)
     }
 
   }
