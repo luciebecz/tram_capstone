@@ -61,30 +61,36 @@ class ShowDriverTrips extends React.Component {
     if(Object.keys(trip).length && (trip.user_id == this.props.user.id) ) {
       return (
         <div className='body_width'>
-        <h1>Trip Details</h1>
-          <div>
-            <button className='btn blue-grey darken-3' onClick={ () =>{this.toggleEdit()} }>Edit This Trip</button>
-            <Link to={'/user_profile'} className='btn blue-grey darken-3'>Back to My Profile</Link>
-            <button onClick={ () =>{this.cancelTrip(trip.id)} } className='btn blue-grey darken-3'>Delete Trip</button>
+          <div className='col s6 trip_details'>
+            <h1>Trip Details</h1>
+              <div>
+                <button className='btn blue-grey darken-3' onClick={ () =>{this.toggleEdit()} }>Edit This Trip</button>
+                <Link to={'/user_profile'} className='btn blue-grey darken-3'>Back to My Profile</Link>
+                <button onClick={ () =>{this.cancelTrip(trip.id)} } className='btn blue-grey darken-3'>Delete Trip</button>
+              </div>
+            <hr />
+            <h4>Name: {trip.name}</h4>
+            <p>Date: {trip.date}</p>
+            <p>Pick Up Time: {trip.pickup_time}</p>
+            <p>Departure Time: {trip.departure_time}</p>
+            <p>Route Flexibility: {trip.route_flexibility}</p>
+            <p>Start Address: {trip.start_address}</p>
+            <p>End Address: {trip.end_address}</p>
+            <p>Other Riders: {trip.rider_username.map( (name, i) => { return <li key={i}> {name}</li>; })}</p>
+            <br />
           </div>
-        <hr />
-        <h4>Name: {trip.name}</h4>
-        <p>Date: {trip.date}</p>
-        <p>Pick Up Time: {trip.pickup_time}</p>
-        <p>Departure Time: {trip.departure_time}</p>
-        <p>Route Flexibility: {trip.route_flexibility}</p>
-        <p>Start Address: {trip.start_address}</p>
-        <p>End Address: {trip.end_address}</p>
-        <p>Other Riders: {trip.rider_username.map( (name, i) => { return <li key={i}> {name}</li>; })}</p>
-        <br />
-        <h4>Message other riders:</h4>
-        <form ref={n => this.form = n } onSubmit={this.submitMessage}>
-          <input ref={ n => this.message = n } required placeholder='Type message here and hit enter to send' />
-        </form>
-        <ul className="collection">
-          { this.messages() }
-        </ul>
-        <GoogleMap trip={trip} />
+          <div className='col s6 trip_messages'>
+            <h4>Message other riders:</h4>
+            <form ref={n => this.form = n } onSubmit={this.submitMessage}>
+              <input ref={ n => this.message = n } required placeholder='Type message here and hit enter to send' />
+            </form>
+            <ul className="collection">
+              { this.messages() }
+            </ul>
+          </div>
+          <div className='trip_map'>
+            <GoogleMap trip={trip} />
+          </div>
         </div>
       );
     } else {

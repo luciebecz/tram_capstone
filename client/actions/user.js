@@ -24,6 +24,7 @@ export const deleteUser = (router) => {
     }).done( user => {
       dispatch({ type: 'DELETE_USER' });
       router.push('/');
+      dispatch(setFlash('You Have Succesfully Deleted Your Trip', 'success'))
     }).fail( data => {
       dispatch(setFlash('Error Deleting User', 'error'))
     })
