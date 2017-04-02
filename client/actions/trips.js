@@ -16,18 +16,16 @@ export const getTrips = () => {
 }
 
 export const addTrip = (name, date, pickup_time, departure_time,
-                           route_flexibility, start_address, end_address,
-                           available_seats, car_make, car_model, car_4wd,
-                           car_chains, driver_username) => {
+                           start_address, end_address,
+                           available_seats, driver_username) => {
  return(dispatch) => {
    $.ajax({
      url: 'api/trips',
      type: 'POST',
      dataType: 'JSON',
      data: { trip: { name, date, pickup_time, departure_time,
-                     route_flexibility, start_address, end_address,
-                     available_seats, car_make, car_model, car_4wd,
-                     car_chains, driver_username } }
+                      start_address, end_address,
+                     available_seats, driver_username } }
    }).done( trip => {
      dispatch({ type: 'ADD_TRIP', trip })
      browserHistory.push('/user_profile');
@@ -58,14 +56,14 @@ export const deleteTrip = (id) => {
 }
 
 export const updateTrip = (name, date, pickup_time, departure_time,
-route_flexibility, start_address, end_address, available_seats, car_make, car_model, car_4wd, car_chains, id) => {
+start_address, end_address, available_seats, id) => {
  return(dispatch) => {
    $.ajax({
      url: `/api/trips/${id}`,
      type: 'PUT',
      dataType: 'JSON',
      data: { trip: { name, date, pickup_time, departure_time,
-     route_flexibility, start_address, end_address, available_seats, car_make, car_model, car_4wd, car_chains }}
+     start_address, end_address, available_seats }}
    }).done( trip => {
      dispatch({ type: 'EDIT_TRIP', trip });
      browserHistory.push('/user_profile');

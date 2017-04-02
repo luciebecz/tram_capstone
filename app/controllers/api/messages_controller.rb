@@ -1,5 +1,5 @@
 class Api::MessagesController < ApplicationController
-  
+
   skip_before_filter  :verify_authenticity_token
 
   def index
@@ -18,12 +18,6 @@ class Api::MessagesController < ApplicationController
         body: params[:message]
       }
     }
-
-  ##  if @trip.save
-    ##  render json: @trip
-  ##  else
-      ##render json: { errors: @trip.errors, status: 422}
-    ##end
 
     MessageBus.publish "trip_#{trip.id}", payload
     head :ok

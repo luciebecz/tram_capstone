@@ -1,6 +1,6 @@
 class Trip < ApplicationRecord
  validates_presence_of :name, :date, :pickup_time,
- :departure_time, :route_flexibility, :start_address, :end_address, :user_id, :available_seats
+ :departure_time, :start_address, :end_address, :user_id, :available_seats
 
  belongs_to :user
  has_many :messages, dependent: :destroy

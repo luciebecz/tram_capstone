@@ -10,7 +10,6 @@ class Api::UsersController < ApplicationController
 
   def update
     current_user.update(user_params)
-    # binding.pry
     render json: current_user
   end
 

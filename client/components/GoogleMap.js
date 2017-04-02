@@ -3,6 +3,8 @@ import GoogleMapReact from 'google-map-react';
 import { setFlash } from '../actions/flash';
 import { connect } from 'react-redux';
 import Icon from '../images/car_share.png';
+import TripStartMarker from '../images/trip_start_icon.png';
+
 
 const Marker = ({ text }) => {
   return (
@@ -56,16 +58,12 @@ class GoogleMap extends React.Component {
     });
   }
 
-
-  // Drop pin when inputing address on google maps
-
-
     render() {
     let { center, zoom, address } = this.state;
-    if(this.props.trip) {
+    if(this.props.trip.latitude && this.props.trip.longitude) {
       return(
         <div>
-          <h5 className='center'>Trip Start Location</h5>
+          <h5 className='center'>Trip Start Location <img src={TripStartMarker} /> </h5>
           <div style={{ height: '500px', width: '450px', margin: '0 auto' }}>
             <GoogleMapReact
               bootstrapURLKeys={{

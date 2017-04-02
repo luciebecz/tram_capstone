@@ -1,5 +1,5 @@
 class Api::TripsController < ApplicationController
-  
+
 before_action :set_trip, only: [:show, :new, :update, :remove_rider, :destroy, :add_rider, :remove_seat]
 skip_before_filter  :verify_authenticity_token
 
@@ -62,8 +62,8 @@ skip_before_filter  :verify_authenticity_token
 
     def trip_params
       params.require(:trip).permit(:name, :date, :pickup_time, :departure_time,
-      :route_flexibility, :start_address, :end_address, :user, :rider_ids, :available_seats,
-      :driver_username, :rider_username, :car_make, :car_model, :car_4wd, :car_chains)
+      :start_address, :end_address, :user, :rider_ids, :available_seats,
+      :driver_username, :rider_username)
     end
 
 end

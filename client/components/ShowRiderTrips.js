@@ -53,7 +53,6 @@ render() {
       <p>Date: {trip.date}</p>
       <p>Pick Up Time: {trip.pickup_time}</p>
       <p>Departure Time: {trip.departure_time}</p>
-      <p>Route Flexibility: {trip.route_flexibility}</p>
       <p>Start Address: {trip.start_address}</p>
       <p>End Address: {trip.end_address}</p>
       <button onClick={ () => {this.cancelRide(trip.id)} }className='btn grey darken-2'>Cancel Pickup</button>

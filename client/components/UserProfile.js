@@ -8,15 +8,6 @@ import DriverTrips from './DriverTrips';
 import RiderTrips from './RiderTrips';
 import SnowReports from './SnowReports';
 
-// display user profile:
-// show scheduled trips... linked to trip model
-// show cars... linked by cars model
-// Ride section: create, join
-// Link create ride(if user has car) Link to new trip form,
-// Link create ride(if user doesn't have car) Link to new car form first, then link to trip form
-// Join: Link to trips model to show all available trips
-// import settings bar (update account, close account, update user info, manage cars, logout)
-
 class UserProfile extends React.Component {
 
   componentDidMount() {

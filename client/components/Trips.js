@@ -45,8 +45,6 @@ class Trips extends React.Component {
                   <br />
                   <h6>Pickup Location: {trip.start_address}</h6>
                   <br />
-                  <h6>Car: {trip.car_make} {trip.car_model} </h6>
-                  <br />
                   <h6>Available Seats Left: {trip.available_seats}</h6>
                   <br />
                   <button onClick={ () =>{this.joinTrip(trip.id)} } className='btn blue-grey darken-3'>Join This Trip</button>
