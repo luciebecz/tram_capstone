@@ -17,6 +17,11 @@ class Trips extends React.Component {
     this.props.dispatch(joinATrip(id))
   }
 
+  resetForm = (e) => {
+    e.preventDefault();
+    this.setState = { term: ''}
+  }
+
   render() {
     this.setCollapsible()
     let trips = this.props.trips.map( trip => {
@@ -61,7 +66,11 @@ class Trips extends React.Component {
       )
     } else {
       return (
-        <h5>No Available Trips to Join</h5>
+        <div>
+        <h5>Your search did not find any available trips.
+          Try searching again for a different destination.</h5>
+        <Link to='/trips' onClick={ () => {this.resetForm()} } className='search_btn btn grey darken-1'>Search Again</Link>
+        </div>
       )
     }
   }

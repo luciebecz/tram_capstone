@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 import { handleLogout } from '../actions/auth';
 import { connect } from 'react-redux';
+import TramLogo from '../images/TramLogo.png';
+
 
 class MaterialNavbar extends React.Component {
   logout = (e) => {
@@ -36,7 +38,7 @@ class MaterialNavbar extends React.Component {
         <div className='navbar-fixed'>
           <nav id='nav' className='blue-grey darken-3'>
             <div className='nav-wrapper'>
-              <Link to='/' className='brand-logo'><b>T R A M</b></Link>
+              <Link to='/' className='nav-logo'><img src={TramLogo} /></Link>
               <ul className='right'>
                 { this.authLinks() }
               </ul>

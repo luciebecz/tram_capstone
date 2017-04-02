@@ -10,7 +10,7 @@ const Home = () => (
     </div>
     <div className='col s6'>
       <div className='home_slogan'>
-        <h5 className='center'><b>Catchy sentence Goes Here</b></h5>
+        <h5 className='center'><b>Getting You First Chair</b></h5>
         <Link to='sign_up' className='btn-large blue-grey darken-3 home_btn'>S I G N  U P</Link>
       </div>
     </div>
