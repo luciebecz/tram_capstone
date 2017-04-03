@@ -28,10 +28,29 @@ p {
 }
 
 .signup_page {
-  background-image: url('https://cdn.shutterstock.com/shutterstock/videos/3382730/thumb/1.jpg');
+  padding-top: 70px;
+  background-color: black;
+  background-repeat: repeat;
+  height: 100vh;
   color: silver;
 
 }
+
+.login_page {
+  background-color: black;
+  background-repeat: repeat;
+  background-size: 100%;
+  color: silver;
+  height: 100vh;
+  padding: 70px;
+}
+
+.form_login {
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+/*>>>>>>>>>>>HOME PAGE>>>>>>>>>>>>> */
 
 .home_page {
 
@@ -45,20 +64,32 @@ p {
 
 .home_title {
   font-size: 160px;
-  margin-top: 100px;
-}
-
-.home_slogan {
-  margin-top: 200px;
-}
-
-.home_btn {
+  margin-top: 65px;
   float: left;
 }
 
+.home_slogan {
+  margin-top: 230px;
+}
+
+.home_signup_btn {
+  margin-top: 80px;
+  margin-left: 40%;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+/*>>>>>>>>>>>>>ABOUT US PAGE>>>>>>>>>>>>>>>>>>>*/
+
+.about_title {
+  font-size: 160px; 
+}
+
+
 .about_page {
-  background-image: url('https://cdn.shutterstock.com/shutterstock/videos/3382730/thumb/1.jpg');
-  height: 100vh;
+  background-color: black;
+  // background-image: url('https://nextadventure.net/media/blog/uploads/files/resize/IMG_1723_0-400x300.JPG');
+  background-repeat: repeat; 
   // background-image: url('https://cdn.shutterstock.com/shutterstock/videos/3211894/thumb/1.jpg?i10c=img.resize(height:160)');
   color: silver;
 }
@@ -91,7 +122,7 @@ p {
   float: left;
   width: 30%;
   z-index: 10px;
-  background-color: cadetblue;
+  background-color: #37474f;
   padding: 10px;
   border-radius: 15px;
 }
@@ -100,6 +131,7 @@ p {
   width: 65.0%;
   float: right;
   margin: 1%;
+  font-size: 20px;
 }
 
 .driver_trip_card {
@@ -110,15 +142,19 @@ p {
 }
 
 .parent {
-  background-color: #D8DEE3;
+  // background-color: #37474f;
+  background-color: black;
+  border-radius: 7px;
   margin-top: 10px;
-  overflow: auto;
-  padding: 10px;
+  padding: 20px;
+  padding-left: 20px;
   height: 270px;
 }
 
 .dev_name {
+  margin-top: 50px;
   text-align: center;
+  color: silver;
 }
 
 
@@ -138,6 +174,7 @@ p {
 }
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
+/*>>>>>>>>>>>>>USER PROFILE>>>>>>>>>>>>>>>>>*/
 .trip_loop {
   float: right;
   margin-top: 32px;
@@ -156,9 +193,9 @@ p {
   border-radius: 6px;
 }
 
-.car_attributes_rider {
-  text-indent: 10px;
-  padding-top: 5px;
+.rider_header {
+  font-size: 30px;
+  text-align: center;
 }
 
 .trip_header {
@@ -173,6 +210,13 @@ p {
 
 .user_header_btn {
   float: right;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.car_attributes_rider {
+  text-indent: 10px;
+  padding-top: 5px;
 }
 
 .btn {
@@ -204,13 +248,19 @@ p {
   background-color: #F6F6F7
 }
 
+/*>>>>>>>>>>SEARCH BAR>>>>>>>>>>>>>>>>> */
 .search_bar_container {
   height: 80px;
 
 }
 
-.search_btn {
+// .clear_btn {
+//   float: right;
+// }
+
+.search_btns {
   float: right;
+  margin-left: 10px;
 }
 
 .search_form {
@@ -222,6 +272,8 @@ p {
   float: left;
   margin-right: 20px;
 }
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 .input[type=text]:focus {
   border-bottom: 1px solid #000;
@@ -236,20 +288,33 @@ p {
   font-size: 50px;
 }
 
+
 /*>>>>>>>>>>>TRIP SHOW PAGE FOR DRIVER >>>>>>>>>>>>>>*/
 
-.trip_messages {
+.trip_messages { /* give messages or map a specified div size */
   float: right;
-  width: 40%;
+  width: 46%;
   margin-top: 60px;
+  background-color: #607d8b;
+  border-radius: 7px;
+  padding: 15px;
+}
+
+.message_header {
+  color: white;
+}
+
+.message_collection {
+
 }
 
 .trip_details {
   float: left;
-  width: 45%
+  width: 50%
 }
 
 .trip_map {
   float: left;
+  width: 45%;
 }
-
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */

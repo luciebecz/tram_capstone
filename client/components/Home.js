@@ -8,10 +8,10 @@ const Home = () => (
       <div>
       </div>
     </div>
-    <div className='col s6'>
-      <div className='home_slogan'>
-        <h5 className='center'><b>Getting You First Chair</b></h5>
-        <Link to='sign_up' className='btn-large blue-grey darken-3 home_btn'>S I G N  U P</Link>
+    <div className='col s6 home_slogan'>
+      <div>
+        <h3 className='center'><b>Getting You First Chair</b></h3>
+        <Link to='sign_up' className='btn-large blue-grey darken-3 home_signup_btn'>S I G N  U P</Link>
       </div>
     </div>
   </div>

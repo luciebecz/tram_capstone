@@ -14,8 +14,8 @@ class Login extends React.Component {
   render() {
     return(
       <div className='body_width login_page'>
-        <h3>Login</h3>
-        <form onSubmit={ this.handleSubmit }>
+        <h2>Login</h2>
+        <form className='form_login' onSubmit={ this.handleSubmit }>
           <input ref='email' type='text' required placeholder='Email' />
           <br />
           <input ref='password' type='password' required placeholder='Password' />

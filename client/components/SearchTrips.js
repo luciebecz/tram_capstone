@@ -26,8 +26,11 @@ class SearchTrips extends React.Component {
           <form className='search_form'>
             <input ref='term' placeholder='Search Name of Destination or Resort' />
           </form>
-            <button onClick={this.handleSubmit} className='btn blue-grey darken-3'>Search Trips</button>
-          <Link to='/trips' onClick={ () => {this.resetForm()} } className='search_btn btn grey darken-1'>Clear Search</Link>
+          <div className='col s3 search_btns'>
+            <button onClick={this.handleSubmit} className='btn blue-grey darken-3 search_btn'>Search Trips</button>
+            <Link to='/trips' onClick={ () => {this.resetForm()} } className='clear_btn btn grey darken-1'>Clear Search</Link>
+          </div>
+          <br />
         </div>
       );
   }

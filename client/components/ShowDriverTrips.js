@@ -46,7 +46,7 @@ class ShowDriverTrips extends React.Component {
   messages = () => {
     return this.props.messages.map( (m, i) => {
       return (
-        <li key={i} className="collection-item">
+        <li key={i} className="collection-item message_collection">
           {m.body}
           <div className="secondary-content">
             {m.name}
@@ -76,18 +76,18 @@ class ShowDriverTrips extends React.Component {
             <p>End Address: {trip.end_address}</p>
             <p>Other Riders: {trip.rider_username.map( (name, i) => { return <li key={i}> {name}</li>; })}</p>
             <br />
+            <div className='trip_map'>
+              <GoogleMap trip={trip} />
+            </div>
           </div>
           <div className='col s6 trip_messages'>
-            <h4>Message other riders:</h4>
+            <h4 className='message_header'>Message other riders:</h4>
             <form ref={n => this.form = n } onSubmit={this.submitMessage}>
               <input ref={ n => this.message = n } required placeholder='Type message here and hit enter to send' />
             </form>
             <ul className="collection">
               { this.messages() }
             </ul>
-          </div>
-          <div className='trip_map'>
-            <GoogleMap trip={trip} />
           </div>
         </div>
       );

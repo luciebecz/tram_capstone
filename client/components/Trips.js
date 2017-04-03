@@ -59,6 +59,7 @@ class Trips extends React.Component {
       return (
         <div>
           <SearchTrips />
+          <br />
           {trips}
         </div>
       )
