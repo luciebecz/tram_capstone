@@ -41,26 +41,26 @@ export default (
         <IndexRoute component = {Home} />
         <Route path='/login' component={Login} />
         <Route path='/sign_up' component={SignUp} />
-        <Route path='/user_update' component={UserUpdate} />
         <Route path='/about_us' component={AboutUs} />
-        <Route path='/snowreports' component={SnowReports} />
+        <Route path='/snowreports' component={UserIsAuthenticated(SnowReports)} />
         <Route component={SetTrips}>
-          <Route path='/user_profile' component={UserProfile} history={browserHistory} />
-          <Route path='/searchtrips' component={SearchTrips} />
-          <Route path='/trips' component={Trips} />
-          <Route path='/trips/:id' component={Trip} />
-          <Route path='/showtrip/:id' component={ShowTrip} />
-          <Route path='/newtrip' component={NewTrip} />
-          <Route path='/usertrips' component={UserTrips} />
-          <Route path='/drivertrips' component={DriverTrips} />
-          <Route path='/showdrivertrips/:id' component={ShowDriverTrips} />
-          <Route path='/ridertrips' component={RiderTrips} />
-          <Route path='/showridertrips/:id' component={ShowRiderTrips} />
-          <Route path='/map' component={GoogleMap} />
+          <Route path='/user_update' component={UserIsAuthenticated(UserUpdate)} />
+          <Route path='/user_profile' component={UserIsAuthenticated(UserProfile)} history={browserHistory} />
+          <Route path='/searchtrips' component={UserIsAuthenticated(SearchTrips)} />
+          <Route path='/trips' component={UserIsAuthenticated(Trips)} />
+          <Route path='/trips/:id' component={UserIsAuthenticated(Trip)} />
+          <Route path='/showtrip/:id' component={UserIsAuthenticated(ShowTrip)} />
+          <Route path='/newtrip' component={UserIsAuthenticated(NewTrip)} />
+          <Route path='/usertrips' component={UserIsAuthenticated(UserTrips)} />
+          <Route path='/drivertrips' component={UserIsAuthenticated(DriverTrips)} />
+          <Route path='/showdrivertrips/:id' component={UserIsAuthenticated(ShowDriverTrips)} />
+          <Route path='/ridertrips' component={UserIsAuthenticated(RiderTrips)} />
+          <Route path='/showridertrips/:id' component={UserIsAuthenticated(ShowRiderTrips)} />
+          <Route path='/map' component={UserIsAuthenticated(GoogleMap)} />
         </Route>
-        <Route path='/cars' component={Cars} />
-        <Route path='/newcarform' component={NewCarForm} />
-        <Route path='/editcarform/:id' component={EditCarForm} />
+        <Route path='/cars' component={UserIsAuthenticated(Cars)} />
+        <Route path='/newcarform' component={UserIsAuthenticated(NewCarForm)} />
+        <Route path='/editcarform/:id' component={UserIsAuthenticated(EditCarForm)} />
       </Route>
     </Route>
     <Route path="*" status={404} component={NoMatch} />
