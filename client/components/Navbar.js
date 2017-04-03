@@ -8,6 +8,7 @@ import TramLogoWhite from '../images/TramLogoWhite.png';
 class MaterialNavbar extends React.Component {
   logout = (e) => {
     e.preventDefault();
+    this.props.dispatch({ type: 'FORGET' })
     this.props.dispatch(handleLogout());
   }
 

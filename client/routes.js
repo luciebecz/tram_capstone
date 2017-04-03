@@ -30,8 +30,8 @@ import GoogleMap from './components/GoogleMap';
 
 
 const UserIsAuthenticated = UserAuthWrapper({
-  authSelector: state => state.auth,
-  predicate: auth => auth.isAuthenticated,
+  authSelector: state => state,
+  predicate: state => state.remember || state.auth.isAuthenticated,
 });
 
 export default (

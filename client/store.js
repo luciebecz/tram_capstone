@@ -6,17 +6,20 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 
 const enhancers = compose(
-  applyMiddleware(thunk),
-  window.devToolsExtension ? window.devToolsExtension() : f => f
+ applyMiddleware(thunk),
+ window.devToolsExtension ? window.devToolsExtension() : f => f
 )
 
-const store = createStore(rootReducer, {}, enhancers)
+let data = document.getElementById('app').dataset
+let remember = data.remember === 'true'
+
+const store = createStore(rootReducer, { remember }, enhancers)
 
 if(module.hot) {
-  module.hot.accept('./reducers/',() => {
-    const nextRootReducer = require('./reducers/index').default;
-    store.replaceReducer(nextRootReducer);
-  });
+ module.hot.accept('./reducers/',() => {
+   const nextRootReducer = require('./reducers/index').default;
+   store.replaceReducer(nextRootReducer);
+ });
 }
 
 export const history = syncHistoryWithStore(browserHistory, store)

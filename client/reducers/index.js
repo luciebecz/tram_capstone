@@ -7,7 +7,8 @@ import trips from './trips';
 import cars from './cars';
 import messages from './messages';
 import reports from './reports';
+import remember from './remember';
 
-const rootReducer = combineReducers({ routing: routerReducer, auth, flash, user, trips, cars, messages, reports });
+const rootReducer = combineReducers({ routing: routerReducer, auth, flash, user, trips, cars, messages, reports, remember });
 
 export default rootReducer;
