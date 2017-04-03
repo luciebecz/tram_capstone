@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     post 'trips/:id/message', to: 'messages#create'
     get 'messages', to: 'messages#index'
     get 'reports', to: 'reports#index'
+    put 'users/avatar', to: 'users#update_avatar'
 
     resources :trips
     resources :cars

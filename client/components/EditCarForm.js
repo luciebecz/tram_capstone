@@ -7,12 +7,8 @@ import { Link } from 'react-router'
 class EditCarForm extends React.Component{
   constructor(props) {
     super(props);
-    this.state = {
-      car: {},
-      has_four_by_four: false,
-      has_chains: false,
-    };
-      this.handleInputChange = this.handleInputChange.bind(this);
+    this.state = { car: {} };
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   componentDidMount() {
@@ -22,7 +18,6 @@ class EditCarForm extends React.Component{
     }).done( car => {
       this.setState({ car });
     })
-    // this.props.dispatch(updateCar());
   }
 
   editCar = (id) => {
@@ -43,9 +38,7 @@ class EditCarForm extends React.Component{
     const target = e.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-    this.setState({
-      [name]: value
-    })
+    this.setState({car: {...this.state.car, [name]: value } })
   }
   render() {
     let car = this.state.car;
@@ -60,16 +53,18 @@ class EditCarForm extends React.Component{
             <input
               defaultValue={car.four_by_four}
               type="checkbox"
-              name="has_four_by_four"
-              checked={this.state.has_four_by_four}
+              name="four_by_four"
+              checked={this.state.car.four_by_four}
               onChange={this.handleInputChange}
               ref='four_by_four'
               id="test5"
             />
             <label htmlFor='test5'>Four Wheel Drive? </label><br />
-            <input type="checkbox" name="has_chains"
+            <input 
+              type="checkbox" 
+              name="chains"
               defaultValue={car.chains}
-              checked={this.state.has_chains}
+              checked={this.state.car.chains}
               onChange={this.handleInputChange}
               ref='chains'
               id="test6"

@@ -21,8 +21,8 @@ class Cars extends React.Component {
       return (
         <div key={car.id} className='body_width'>
           <li><h5><u>{car.make} {car.model}</u></h5></li>
-          <li><h6>Has Chains? {car.chains}</h6></li>
-          <li><h6>Has 4 Wheel Drive? {car.four_by_four}</h6></li>
+          <li><h6>Has Chains? {car.chains.toString()}</h6></li>
+          <li><h6>Has 4 Wheel Drive? {car.four_by_four.toString()}</h6></li>
           <br />
           <Link to={`/editcarform/${car.id}`} className='btn blue-grey darken-3'>Edit Car</Link>
           <button onClick={ () => {this.removeCar(car.id)}} className='btn grey darken-2'>Delete</button><br /><br />

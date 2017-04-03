@@ -1,5 +1,7 @@
 import { browserHistory } from 'react-router';
 import { setFlash } from './flash';
+import request from 'superagent';
+require('superagent-rails-csrf')(request);
 
 export const getUser = () => {
   return (dispatch) => {
@@ -31,7 +33,7 @@ export const deleteUser = (router) => {
   }
 }
 
-export const updateUser = (first_name, last_name) => {
+export const updateUser = (first_name, last_name, avatar) => {
   return(dispatch) => {
     $.ajax({
       url: '/api/update_user',
@@ -39,8 +41,13 @@ export const updateUser = (first_name, last_name) => {
       dataType: 'JSON', 
       data: { user: { first_name, last_name }}
     }).done( user => {
-      dispatch({ type: 'UPDATE_USER', user });
-      browserHistory.push('/user_profile')
+      request.put('/api/users/avatar')
+      .setCsrfToken()
+      .attach(avatar.name, avatar)
+      .end( (error, res) => {
+        dispatch({ type: 'UPDATE_USER', user: res.body })
+        browserHistory.push('/user_profile')
+      })
     }).fail( data => {
       dispatch(setFlash('Error Updating User', 'error'))
     })

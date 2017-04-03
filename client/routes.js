@@ -43,9 +43,9 @@ export default (
         <Route path='/sign_up' component={SignUp} />
         <Route path='/about_us' component={AboutUs} />
         <Route path='/snowreports' component={UserIsAuthenticated(SnowReports)} />
+        <Route path='/user_update' component={UserIsAuthenticated(UserUpdate)} />
+        <Route path='/user_profile' component={UserIsAuthenticated(UserProfile)} history={browserHistory} />
         <Route component={SetTrips}>
-          <Route path='/user_update' component={UserIsAuthenticated(UserUpdate)} />
-          <Route path='/user_profile' component={UserIsAuthenticated(UserProfile)} history={browserHistory} />
           <Route path='/searchtrips' component={UserIsAuthenticated(SearchTrips)} />
           <Route path='/trips' component={UserIsAuthenticated(Trips)} />
           <Route path='/trips/:id' component={UserIsAuthenticated(Trip)} />

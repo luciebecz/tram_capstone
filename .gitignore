@@ -21,3 +21,4 @@ npm-debug.log
 
 # Ignore SimpleCove folder and files 
 coverage/
+.env

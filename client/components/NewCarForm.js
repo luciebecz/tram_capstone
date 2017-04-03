@@ -7,19 +7,16 @@ class NewCarForm extends React.Component{
 
   constructor(props) {
     super(props);
-    this.state = {
-      has_four_by_four: false,
-      has_chains: false
-    };
-      this.handleInputChange = this.handleInputChange.bind(this);
+    this.state = { chains: false, four_by_four: false }
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     let make = this.refs.make.value;
     let model = this.refs.model.value;
-    let four_by_four = this.refs.four_by_four.value; 
-    let chains = this.refs.chains.value;
+    let four_by_four = this.state.four_by_four; 
+    let chains = this.state.chains;
     this.props.dispatch(addCar(make, model, four_by_four, chains));
   }
 
@@ -27,9 +24,9 @@ class NewCarForm extends React.Component{
     const target = e.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-    this.setState({
-      [name]: value
-    })
+    console.log("value: " + value);
+    console.log("name: " + name);
+    this.setState({ [name]: value  })
   }
 
   render() {
@@ -43,20 +40,17 @@ class NewCarForm extends React.Component{
             <input ref='model' placeholder="Your Car Model?" required />
             <input
               type="checkbox"
-              name="has_four_by_four"
-              checked={this.state.has_four_by_four}
+              name="four_by_four"
               onChange={this.handleInputChange}
-              ref='four_by_four'
               id="test5"
             />
             <label htmlFor='test5'>Four Wheel Drive</label>
-                <input type="checkbox" name="has_chains"
-                  checked={this.state.has_chains}
-                  onChange={this.handleInputChange}
-                  ref='chains'
-                  defaultValue={car.chains}
-                  id="test6"
-                />
+              <input 
+                type="checkbox" 
+                name="chains"
+                onChange={this.handleInputChange}
+                id="test6"
+              />
               <label htmlFor='test6'>Chains On Wheels?</label>
             <div>
               <button className="btn blue-grey darken-3">Submit</button>
