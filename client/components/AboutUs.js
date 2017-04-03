@@ -2,6 +2,8 @@ import React from 'react';
 import Chris from '../images/Chris.jpeg';
 import Lucie from '../images/Lucie.jpg';
 import Tyler from '../images/Tyler.jpg';
+import Nate from '../images/Nate.jpg';
+
 
 const AboutUs = () => (
   <div className='row body_width about_page'>
@@ -24,7 +26,7 @@ const AboutUs = () => (
           <h5>About The Developers</h5><br />
           <div className='parent'>
             <div className='developer1'>
-              <img className='image' src='https://openclipart.org/image/2400px/svg_to_png/386/Gerald-G-Man-Face-4-World-Label.png' style={{width:185, align:'center', float: 'right', borderRadius:10}}/>
+              <img className='image' src={Nate} style={{width:170, align:'center', float: 'right', borderRadius:10}}/>
               <br />
               <h5 className='dev_name'>Nate Stuart</h5>
             </div>
@@ -48,7 +50,7 @@ const AboutUs = () => (
               <h5 className='dev_name'>Tyler Davis</h5>
             </div>
             <div>
-              <p className='paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla euismod posuere. Fusce dui mauris, aliquet ve.</p>
+              <p className='paragraph'>A former ASCP laboratory scientist, Tyler now enters the world of programming by day, conducts unethical experiments by night.</p>
           </div>
           </div>  
           <div className='parent'>
