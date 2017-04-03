@@ -59,6 +59,10 @@ messages = () => {
             <p>Departure Time: {trip.departure_time}</p>
             <p>Start Address: {trip.start_address}</p>
             <p>End Address: {trip.end_address}</p>
+            <p>Driver:</p>
+            <div>
+              <img className='responsive-img driver_image' src={trip.driver_avatar_url} alt='Driver Profile Picture' width='120px' />
+            </div>
             <div className='trip_map'>
               <GoogleMap trip={trip} />
             </div>

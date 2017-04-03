@@ -217,9 +217,20 @@ p {
 .user_image {
   height: 200px;
   float: left;
+  margin-right: 50px;
+  border: 1px solid grey;
 }
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.rider_image {
+  border: 1px solid grey;
+  margin-right: 4px;
+}
+
+.driver_image {
+  border: 1px solid grey;
+}
 
 .car_attributes_rider {
   text-indent: 10px;

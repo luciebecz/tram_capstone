@@ -55,6 +55,14 @@ class ShowDriverTrips extends React.Component {
       )
     })
   }
+
+  // rider_photo = () => {
+  //   return this.props.trip.map( (trip) => {
+
+  //   })
+  // }
+
+
   show = () => {
     let trip = this.props.trip || {};
     if(Object.keys(trip).length && (trip.user_id == this.props.user.id) ) {
@@ -75,6 +83,7 @@ class ShowDriverTrips extends React.Component {
             <p>Start Address: {trip.start_address}</p>
             <p>End Address: {trip.end_address}</p>
             <p>Other Riders: {trip.rider_username.map( (name, i) => { return <li key={i}> {name}</li>; })}</p>
+            <p>{trip.rider_avatar_url.map((photo) => { return <img className='rider_image' src={photo} width='120px' alt='Rider Profile Pic'/>})}</p>
             <br />
             <div className='trip_map'>
               <GoogleMap trip={trip} />

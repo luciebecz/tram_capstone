@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170403184349) do
+ActiveRecord::Schema.define(version: 20170403223235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,12 +46,12 @@ ActiveRecord::Schema.define(version: 20170403184349) do
   end
 
   create_table "trips", force: :cascade do |t|
-    t.string   "name",            null: false
-    t.string   "date",            null: false
-    t.string   "pickup_time",     null: false
-    t.string   "departure_time",  null: false
-    t.string   "start_address",   null: false
-    t.string   "end_address",     null: false
+    t.string   "name",              null: false
+    t.string   "date",              null: false
+    t.string   "pickup_time",       null: false
+    t.string   "departure_time",    null: false
+    t.string   "start_address",     null: false
+    t.string   "end_address",       null: false
     t.float    "start_lat"
     t.float    "start_long"
     t.float    "end_lat"
@@ -59,13 +59,15 @@ ActiveRecord::Schema.define(version: 20170403184349) do
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.text     "rider_ids"
     t.integer  "available_seats"
     t.text     "trip_car"
     t.text     "driver_username"
     t.text     "rider_username"
+    t.text     "rider_avatar_url"
+    t.text     "driver_avatar_url"
     t.index ["user_id"], name: "index_trips_on_user_id", using: :btree
   end
 

@@ -26,10 +26,10 @@ class UserProfile extends React.Component {
     return(
       <div className='body_width'>
         <div className='user_header_name'>
-          <h3><b>Hello {user.first_name} {user.last_name}!</b></h3>
           <div className='col s6 user_image_div'>
             <img className='responsive-img user_image' width='200px' src={user.avatar_url} alt='User Avatar Image' /><br />
           </div>
+          <h3><b>Hello {user.first_name} {user.last_name}!</b></h3>
         <div>
           <ul id="slide-out" className="side-nav">
             <li><div className="userView">

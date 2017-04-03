@@ -7,6 +7,8 @@ class Trip < ApplicationRecord
  serialize :rider_ids, Array
  serialize :driver_username, Array
  serialize :rider_username, Array
+ serialize :rider_avatar_url, Array 
+ serialize :driver_avatar_url, Array 
 
  def self.date
    @trips = Trip.all.each do |trip|
