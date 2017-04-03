@@ -3,6 +3,7 @@ class Api::TripsController < ApplicationController
 before_action :set_trip, only: [:show, :new, :update, :remove_rider, :destroy, :add_rider, :remove_seat]
 skip_before_filter  :verify_authenticity_token
 
+
   def index
     @trips = Trip.all
     render json: @trips

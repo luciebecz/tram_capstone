@@ -28,7 +28,7 @@ class Trips extends React.Component {
     let trips = this.props.trips.map( trip => {
       if(trip.user_id !== this.props.user.id  && trip.available_seats != 0  && !trip.rider_ids.includes(this.props.user.id)) {
         return (
-          <ul className="collapsible" data-collapsible="accordion">
+          <ul key={trip.id} className="collapsible" data-collapsible="accordion">
             <li>
               <div className="collapsible-header">
                 <b className='blue-grey-text text-darken-1'>{trip.name}</b>

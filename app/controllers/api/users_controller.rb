@@ -1,5 +1,7 @@
 class Api::UsersController < ApplicationController
   skip_before_filter  :verify_authenticity_token
+  
+
   def logged_in_user
     if current_user
       render json: current_user

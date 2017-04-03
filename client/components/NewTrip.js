@@ -2,7 +2,7 @@ import React from 'react';
 import { addTrip } from '../actions/trips';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import { addCar, updateCar } from '../actions/cars';
+import { getCars } from '../actions/cars';
 
 class NewTrip extends React.Component {
 
@@ -13,6 +13,7 @@ class NewTrip extends React.Component {
       });
     $('select').material_select();
   }
+
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +31,6 @@ class NewTrip extends React.Component {
 
 
   render() {
-    // let user = this.props.user
     return (
       <div className='container'>
       <form onSubmit={this.handleSubmit}>
@@ -62,6 +62,5 @@ class NewTrip extends React.Component {
     )
   }
 }
-
 
 export default connect()(NewTrip);

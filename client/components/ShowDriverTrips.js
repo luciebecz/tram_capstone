@@ -1,11 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { deleteTrip, updateTrip } from '../actions/trips';
+import { getCars } from '../actions/cars';
 import { Link } from 'react-router';
 import GoogleMap from './GoogleMap';
 
 class ShowDriverTrips extends React.Component {
   state = { edit: false, car: {} }
+
+  componentDidMount() {
+    this.props.dispatch(getCars());
+  }
 
   toggleEdit = () => {
     this.setState({ edit: !this.state.edit });
@@ -43,6 +48,16 @@ class ShowDriverTrips extends React.Component {
       start_address, end_address, available_seats, id));
   }
 
+  cars = () => {
+    return this.props.cars.map( car => {
+      return (
+        <div>
+          <p>{car.make}</p>
+        </div>
+      )
+    })
+  }
+
   messages = () => {
     return this.props.messages.map( (m, i) => {
       return (
@@ -55,6 +70,7 @@ class ShowDriverTrips extends React.Component {
       )
     })
   }
+
   show = () => {
     let trip = this.props.trip || {};
     if(Object.keys(trip).length && (trip.user_id == this.props.user.id) ) {
@@ -75,6 +91,7 @@ class ShowDriverTrips extends React.Component {
             <p>Start Address: {trip.start_address}</p>
             <p>End Address: {trip.end_address}</p>
             <p>Other Riders: {trip.rider_username.map( (name, i) => { return <li key={i}> {name}</li>; })}</p>
+            <p>{this.cars() }</p>
             <br />
           </div>
           <div className='col s6 trip_messages'>
@@ -139,7 +156,8 @@ class ShowDriverTrips extends React.Component {
   return {
     user: state.user,
     trip: state.trips.find( t => t.id == props.params.id ),
-    messages: state.messages.filter( m => m.trip_id == props.params.id )
+    messages: state.messages.filter( m => m.trip_id == props.params.id ),
+    car: state.cars.find( c => c.id == props.params.id )
   }
   }
 export default connect(mapStateToProps)(ShowDriverTrips);

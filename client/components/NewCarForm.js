@@ -18,7 +18,7 @@ class NewCarForm extends React.Component{
     e.preventDefault();
     let make = this.refs.make.value;
     let model = this.refs.model.value;
-    let four_by_four = this.refs.four_by_four.value; 
+    let four_by_four = this.refs.four_by_four.value;
     let chains = this.refs.chains.value;
     this.props.dispatch(addCar(make, model, four_by_four, chains));
   }
@@ -49,7 +49,7 @@ class NewCarForm extends React.Component{
               ref='four_by_four'
               id="test5"
             />
-            <label htmlFor='test5'>Four Wheel Drive</label>
+          <label htmlFor='test5'>Four Wheel Drive?</label>
                 <input type="checkbox" name="has_chains"
                   checked={this.state.has_chains}
                   onChange={this.handleInputChange}

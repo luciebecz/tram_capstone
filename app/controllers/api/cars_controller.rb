@@ -2,6 +2,7 @@ class Api::CarsController < ApplicationController
    protect_from_forgery with: :null_session
    before_action :set_car, only: [:show, :update, :destroy]
    skip_before_filter  :verify_authenticity_token
+  
 
  def index
    @cars = current_user.cars.all
