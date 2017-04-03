@@ -1,6 +1,7 @@
 import React from 'react';
 import Chris from '../images/Chris.jpeg';
 import Lucie from '../images/Lucie.jpg';
+import Tyler from '../images/Tyler.jpg';
 
 const AboutUs = () => (
   <div className='row body_width about_page'>
@@ -16,7 +17,7 @@ const AboutUs = () => (
           The driver picks the destination, whether it be to one of the Ski Resorts in the Cottonwood Canyons, 
           or to a trailhead to hangout in the backcountry. Our goal is to bring people together and hopefully
           do our part in keeping Utah's air clean.</p><br />
-    </div>
+    </div><hr />
     <div>
       <div className='row'>
         <div className='col s12'>
@@ -38,11 +39,11 @@ const AboutUs = () => (
               <h5 className='dev_name'>Chris Zimmerman</h5>
             </div>
             <div>
-              <p className='paragraph'>Chris has always been fascinated with technology and enjoyed the creative process of Computer Programming. He's an Entrepreneur at hear and is always ready to embark on a new adventure. Chris loves to spend his time exploring the outdoors with his wife and two kids. He is extremely outgoing, loves meeting new people, and exploring new places.</p>
+              <p className='paragraph'>Chris has always been fascinated with technology and enjoyed the creative process of Computer Programming. He's an Entrepreneur at heart and is always ready to embark on a new adventure. Chris loves to spend his time exploring the outdoors with his wife and two kids. He is extremely outgoing, loves meeting new people, and exploring new places.</p>
           </div>
           </div>  <div className='parent'>
             <div className='developer1'>
-              <img className='image' src='http://www.clipartkid.com/images/8/boy-face-cartoon-3-clip-art-at-clker-com-vector-clip-art-online-jkEhzY-clipart.png' style={{width:165, align:'center', float: 'right', borderRadius:10}}/>
+              <img className='image' src={Tyler} style={{width:225, align:'center', float: 'right', borderRadius:10}}/>
               <br />
               <h5 className='dev_name'>Tyler Davis</h5>
             </div>
