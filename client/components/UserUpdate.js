@@ -31,12 +31,13 @@ class UserUpdate extends React.Component {
       let { first_name, last_name, avatar_url } = user;
       return(
         <div className='row body_width'>
+          <div className='container'>
             <h3>Update Your Account</h3>
             { this.displayAvatar(avatar_url) }
             <form ref='signupForm' onSubmit={ this.handleSubmit }>
-              <input ref='first_name' type='text' required placeholder='First Name' defaultValue={user.first_name} />
+              <input ref='first_name' type='text' required placeholder='First Name' style={{fontSize:'25px'}} defaultValue={user.first_name} />
               <br />
-              <input ref='last_name' type='text' required placeholder='Last Name' defaultValue={user.last_name} />
+              <input ref='last_name' type='text' required placeholder='Last Name' style={{fontSize:'25px'}} defaultValue={user.last_name} />
               <br />
               <h6>Upload a Photo of Yourself:</h6>
               <Dropzone
@@ -47,6 +48,7 @@ class UserUpdate extends React.Component {
               <input type='submit' className='btn blue-grey darken-3' value='Update Profile'/>
               <Link to={'/user_profile'} className='btn grey darken-2'>Cancel</Link>
             </form>
+          </div>
         </div>
       );
     }

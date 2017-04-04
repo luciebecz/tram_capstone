@@ -4,7 +4,6 @@ json.trips @trips do |trip|
   json.date trip.date
   json.pickup_time trip.pickup_time
   json.departure_time trip.departure_time
-  json.route_flexibility trip.route_flexibility
   json.start_address trip.start_address
   json.end_address trip.end_address
   json.user_id trip.user_id
@@ -13,4 +12,3 @@ json.trips @trips do |trip|
   json.trip_car trip.trip_car
 end
 
-json.total_pages @trips.total_pages

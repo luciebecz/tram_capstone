@@ -21,8 +21,9 @@ export const handleLogin = (email, password) => {
     }).done( user => {
       dispatch(login(user));
       browserHistory.push('/user_profile')
+      dispatch(setFlash('You Have Successfully Logged In', 'success'));
     }).fail( data => {
-      dispatch(setFlash('Error Logging In', 'error'));
+      dispatch(setFlash('Incorrect Username and/or Email', 'error'));
     });
   }
 }

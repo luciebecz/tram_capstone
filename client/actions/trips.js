@@ -20,7 +20,7 @@ export const addTrip = (name, date, pickup_time, departure_time,
                            available_seats, driver_username) => {
  return(dispatch) => {
    $.ajax({
-     url: 'api/trips',
+     url: '/api/trips',
      type: 'POST',
      dataType: 'JSON',
      data: { trip: { name, date, pickup_time, departure_time,

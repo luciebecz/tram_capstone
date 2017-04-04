@@ -7,12 +7,14 @@ import UserTrips from './UserTrips';
 import DriverTrips from './DriverTrips';
 import RiderTrips from './RiderTrips';
 import SnowReports from './SnowReports';
+import { getCars } from '../actions/cars';
 
 class UserProfile extends React.Component {
   state = { avatar: null }
 
   componentDidMount() {
     $(".button-collapse").sideNav();
+    this.props.dispatch(getCars());
     this.props.dispatch(getUser(), updateUser());
     this.props.dispatch(getTrips());
   }
@@ -47,7 +49,7 @@ class UserProfile extends React.Component {
             <Link to={'/user_update'}>UPDATE ACCOUNT</Link>
             <li><a className="waves-effect" onClick={ () => {this.deleteAccount()} }>CANCEL ACCOUNT</a></li>
           </ul>
-            <a data-activates="slide-out" className="button-collapse btn blue-grey darken-2"><h6 className=" user_header">USER SETTINGS</h6></a>
+            <a data-activates="slide-out" className="button-collapse btn blue-grey darken-2"><h6 className=" user_header">USER SETTINGS/ADD CAR</h6></a>
             <Link to='/snowreports' className='btn blue-grey darken-2'>Snow Reports</Link>
           </div>
         </div>
@@ -65,9 +67,13 @@ class UserProfile extends React.Component {
         <div className='trip_loop z-depth-3'>
           <div className='col s6'>
             <h5 className='trip_header'>My Created Trips</h5>
-            <Link to='/newtrip' className='btn blue-grey darken-2 ride_btn'>Create A Ride</Link>
+            {
+              this.props.car? <Link to='/newtrip' className='btn blue-grey darken-2 ride_btn'>Create A Ride</Link> : <Link to='/newcarform' className=' btn blue-grey darken-2'>Add A Car First</Link>
+            }
           <div>
-            <DriverTrips />
+            {
+              this.props.car? <DriverTrips /> : ""
+            }
           </div>
           </div>
         </div>
@@ -78,7 +84,7 @@ class UserProfile extends React.Component {
 
 
 const mapStateToProps = (state) => {
-  return { user: state.user, trips: state.trips }
+  return { user: state.user, trips: state.trips, car: state.cars[0] }
 }
 
 export default connect(mapStateToProps)(UserProfile);

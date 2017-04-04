@@ -35,7 +35,7 @@ class RiderTrips extends React.Component {
       );
     } else {
       return(
-        <h5>You Have not Joined Any Rides</h5>
+        <h5 className='center'>You Have not Joined Any Rides</h5>
       );
     }
   }

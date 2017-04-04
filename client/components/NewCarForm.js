@@ -24,8 +24,6 @@ class NewCarForm extends React.Component{
     const target = e.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-    console.log("value: " + value);
-    console.log("name: " + name);
     this.setState({ [name]: value  })
   }
 

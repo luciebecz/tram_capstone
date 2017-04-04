@@ -42,6 +42,7 @@ skip_before_filter  :verify_authenticity_token
     @trip = current_user.trips.new(trip_params)
     @trip.driver_username << current_user.username
     @trip.driver_avatar_url << current_user.avatar_url
+    @trip.trip_car << current_user.cars[0]
     if @trip.save
       render json: @trip
     else
@@ -67,7 +68,8 @@ skip_before_filter  :verify_authenticity_token
     def trip_params
       params.require(:trip).permit(:name, :date, :pickup_time, :departure_time,
       :start_address, :end_address, :user, :rider_ids, :available_seats,
-      :driver_username, :rider_username, :rider_avatar_url, :driver_avatar_url)
+      :driver_username, :rider_username, :rider_avatar_url, :driver_avatar_url,
+      :trip_car)
     end
 
 end

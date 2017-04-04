@@ -34,7 +34,7 @@ class DriverTrips extends React.Component {
       );
     } else {
       return(
-        <h6 className='center'>You Haven't Created Any Rides</h6>
+        <h5 className='center'>You Haven't Created Any Rides</h5>
       );
     }
   }

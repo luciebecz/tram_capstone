@@ -3,9 +3,14 @@ import { connect } from 'react-redux';
 import { deleteTrip, updateTrip } from '../actions/trips';
 import { Link } from 'react-router';
 import GoogleMap from './GoogleMap';
+import { getCars } from '../actions/cars';
 
 class ShowDriverTrips extends React.Component {
   state = { edit: false, car: {} }
+
+  componentDidMount() {
+    this.props.dispatch(getCars());
+  }
 
   toggleEdit = () => {
     this.setState({ edit: !this.state.edit });
@@ -43,6 +48,15 @@ class ShowDriverTrips extends React.Component {
       start_address, end_address, available_seats, id));
   }
 
+  cars = () => {
+    let car = this.props.car;
+    return(
+      <div>
+        <p>- {car.make} {car.model}</p>
+      </div>
+    )
+  }
+
   messages = () => {
     return this.props.messages.map( (m, i) => {
       return (
@@ -76,6 +90,7 @@ class ShowDriverTrips extends React.Component {
             <p>Departure Time: {trip.departure_time}</p>
             <p>Start Address: {trip.start_address}</p>
             <p>End Address: {trip.end_address}</p>
+            <p>Car You are Taking: {this.cars() }</p>
             <p>Other Riders: {trip.rider_username.map( (name, i) => { return <li key={i}> {name}</li>; })}</p>
             <p>{trip.rider_avatar_url.map((photo) => { return <img className='rider_image' src={photo} width='120px' alt='Rider Profile Pic'/>})}</p>
             <br />
@@ -86,7 +101,7 @@ class ShowDriverTrips extends React.Component {
           <div className='col s6 z-depth-3 trip_messages'>
             <h4 className='message_header'>Message other riders:</h4>
             <form ref={n => this.form = n } onSubmit={this.submitMessage}>
-              <input ref={ n => this.message = n } required placeholder='Type message here and hit enter to send' />
+              <input ref={ n => this.message = n } style={{color:'white', fontSize:'20px'}} required placeholder='Type message here and hit enter to send' />
             </form>
             <ul className="collection">
               { this.messages() }
@@ -139,10 +154,11 @@ class ShowDriverTrips extends React.Component {
   }
 
   const mapStateToProps = (state, props) => {
-  return {
-    user: state.user,
-    trip: state.trips.find( t => t.id == props.params.id ),
-    messages: state.messages.filter( m => m.trip_id == props.params.id )
-  }
+    return {
+      car: state.cars[0],
+      user: state.user,
+      trip: state.trips.find( t => t.id == props.params.id ),
+      messages: state.messages.filter( m => m.trip_id == props.params.id )
+    }
   }
 export default connect(mapStateToProps)(ShowDriverTrips);

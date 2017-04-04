@@ -59,7 +59,8 @@ messages = () => {
             <p>Departure Time: {trip.departure_time}</p>
             <p>Start Address: {trip.start_address}</p>
             <p>End Address: {trip.end_address}</p>
-            <p>Driver:</p>
+            <p>Car For Trip: {trip.trip_car[0].make} {trip.trip_car[0].model}, {trip.trip_car[0].chains? "Chains" : "No Chains"}, {trip.trip_car[0].four_by_four? "4WD" : "No 4WD"}  </p>
+            <p>Driver: {trip.driver_username}</p>
             <div>
               <img className='responsive-img driver_image' src={trip.driver_avatar_url} alt='Driver Profile Picture' width='120px' />
             </div>
@@ -71,7 +72,7 @@ messages = () => {
           <div className='col s6 z-depth-3 trip_messages'>
             <h4 className='message_header'>Message driver and other riders:</h4>
             <form ref={n => this.form = n } onSubmit={this.submitMessage}>
-              <input ref={ n => this.message = n } required placeholder='Type message here and hit enter to send' />
+              <input ref={ n => this.message = n } style={{color:'white', fontSize:'20px'}} required placeholder='Type message here and hit enter to send' />
             </form>
             <ul className="collection">
               { this.messages() }

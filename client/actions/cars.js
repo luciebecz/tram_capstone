@@ -25,9 +25,9 @@ export const addCar = (make, model, four_by_four, chains) => {
     }).done( car => {
       dispatch({ type: 'ADD_CAR', car });
       browserHistory.push('/cars');
-      dispatch(setFlash('Car Added', 'success'));
+      dispatch(setFlash('Car Added Successfully', 'success'));
     }).fail( data => {
-      dispatch(setFlash('Car Was Not Added', 'error'))
+      dispatch(setFlash('Car Was Not Added', 'error'));
       console.log(data);
     });
   }
@@ -56,6 +56,7 @@ export const deleteCar = (id) => {
       type: 'DELETE'
     }).done( () => {
       dispatch({ type: 'DELETE_CAR', id });
+      browserHistory.push('/user_profile');
       dispatch(setFlash('Car Deleted', 'success'));
     }).fail( data => {
       dispatch(setFlash('Car Delete Unsuccessful', 'error'))

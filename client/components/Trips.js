@@ -37,15 +37,19 @@ class Trips extends React.Component {
               </div>
               <div className="collapsible-body">
                 <span>
-                  <h6>Resort/Drop Off Location: {trip.end_address}</h6>
+                  <p>Resort/Drop Off Location: {trip.end_address}</p>
                   <br />
-                  <h6>Pickup Time: {trip.pickup_time}</h6>
+                  <p>Pickup Time: {trip.pickup_time}</p>
                   <br />
-                  <h6>Departure Time: {trip.departure_time}</h6>
+                  <p>Departure Time: {trip.departure_time}</p>
                   <br />
-                  <h6>Pickup Location: {trip.start_address}</h6>
+                  <p>Pickup Location: {trip.start_address}</p>
                   <br />
-                  <h6>Available Seats Left: {trip.available_seats}</h6>
+                  <p>Available Seats Left: {trip.available_seats}</p>
+                  <br />
+                  <p>Car For Trip: {trip.trip_car.length !== 0? trip.trip_car[0].make : "No car"} {trip.trip_car.length !== 0? trip.trip_car[0].model : ""}</p>
+                  <p>{trip.trip_car.length !== 0? trip.trip_car[0].four_by_four : ""}</p>
+                  <p>{trip.trip_car.length !== 0? trip.trip_car[0].chains : ""}</p>
                   <br />
                   <button onClick={ () =>{this.joinTrip(trip.id)} } className='btn blue-grey darken-3'>Join This Trip</button>
                 </span>
