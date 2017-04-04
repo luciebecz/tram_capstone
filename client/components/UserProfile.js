@@ -52,7 +52,7 @@ class UserProfile extends React.Component {
           </div>
         </div>
         <br />
-        <div className='rider_loop'>
+        <div className='rider_loop z-depth-3'>
           <div className='col s6'>
             <h5 className='rider_header'>My Joined Trips</h5>
             <Link to='/trips' className='btn blue-grey darken-2 ride_btn'>Join A Trip</Link>
@@ -62,7 +62,7 @@ class UserProfile extends React.Component {
         </div>
         </div>
         <br />
-        <div className='trip_loop'>
+        <div className='trip_loop z-depth-3'>
           <div className='col s6'>
             <h5 className='trip_header'>My Created Trips</h5>
             <Link to='/newtrip' className='btn blue-grey darken-2 ride_btn'>Create A Ride</Link>

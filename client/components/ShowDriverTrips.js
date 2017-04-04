@@ -56,12 +56,6 @@ class ShowDriverTrips extends React.Component {
     })
   }
 
-  // rider_photo = () => {
-  //   return this.props.trip.map( (trip) => {
-
-  //   })
-  // }
-
 
   show = () => {
     let trip = this.props.trip || {};
@@ -89,7 +83,7 @@ class ShowDriverTrips extends React.Component {
               <GoogleMap trip={trip} />
             </div>
           </div>
-          <div className='col s6 trip_messages'>
+          <div className='col s6 z-depth-3 trip_messages'>
             <h4 className='message_header'>Message other riders:</h4>
             <form ref={n => this.form = n } onSubmit={this.submitMessage}>
               <input ref={ n => this.message = n } required placeholder='Type message here and hit enter to send' />

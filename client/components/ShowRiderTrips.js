@@ -63,11 +63,12 @@ messages = () => {
             <div>
               <img className='responsive-img driver_image' src={trip.driver_avatar_url} alt='Driver Profile Picture' width='120px' />
             </div>
+            <br />
             <div className='trip_map'>
               <GoogleMap trip={trip} />
             </div>
           </div>
-          <div className='col s6 trip_messages'>
+          <div className='col s6 z-depth-3 trip_messages'>
             <h4 className='message_header'>Message driver and other riders:</h4>
             <form ref={n => this.form = n } onSubmit={this.submitMessage}>
               <input ref={ n => this.message = n } required placeholder='Type message here and hit enter to send' />

@@ -64,7 +64,7 @@ class GoogleMap extends React.Component {
       return(
         <div>
           <h5 className='center'>Trip Start Location <img src={TripStartMarker} /> </h5>
-          <div style={{ height: '500px', width: '450px', margin: '0 auto' }}>
+          <div className='z-depth-3'style={{ height: '500px', width: '450px', margin: '0 auto' }}>
             <GoogleMapReact
               bootstrapURLKeys={{
                 key: 'AIzaSyBVRhwQzPIXaqsBTdjmDNpL4ouA3na0N6A'

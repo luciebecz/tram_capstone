@@ -19,50 +19,45 @@ const AboutUs = () => (
           The driver picks the destination, whether it be to one of the Ski Resorts in the Cottonwood Canyons, 
           or to a trailhead to hangout in the backcountry. Our goal is to bring people together and hopefully
           do our part in keeping Utah's air clean.</p><br />
-    </div><hr />
+    </div><hr /><br /><br />
     <div>
-      <div className='row'>
-        <div className='col s12'>
-          <h5>About The Developers</h5><br />
-          <div className='parent'>
-            <div className='developer1'>
-              <img className='image' src={Nate} style={{width:170, align:'center', float: 'right', borderRadius:10}}/>
+      <div>
+        <div>
+          <h4 className='center'>About The Developers</h4><br /><br />
+            <div className='developer1  center'>
+              <img className='image' src={Nate} style={{width:270, borderRadius:10}}/>
+              <h5 className='dev_name'><b>Nathan Stuart</b></h5><hr />            
               <br />
-              <h5 className='dev_name'>Nate Stuart</h5>
+              <div className='center paragraph'>
+                <p className='center paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla euismod posuere. Fusce dui mauris, aliquet ve.</p>
+              </div>
             </div>
-            <div>
-              <p className='paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla euismod posuere. Fusce dui mauris, aliquet ve.</p>
-            </div>
-          </div>
-          <div className='parent'>
-            <div className='developer1'>
-              <img className='image' src={Chris}style={{width: '190px', align:'center', float: 'right', borderRadius:10}}/>
-              <br /> 
-              <h5 className='dev_name'>Chris Zimmerman</h5>
-            </div>
-            <div>
-              <p className='paragraph'>Chris has always been fascinated with technology and enjoyed the creative process of Computer Programming. He's an Entrepreneur at heart and is always ready to embark on a new adventure. Chris loves to spend his time exploring the outdoors with his wife and two kids. He is extremely outgoing, loves meeting new people, and exploring new places.</p>
-          </div>
-          </div>  <div className='parent'>
-            <div className='developer1'>
-              <img className='image' src={Tyler} style={{width:225, align:'center', float: 'right', borderRadius:10}}/>
+            <div className='developer1  center'>
+              <img className='image' src={Chris} style={{width:305, borderRadius:10}}/> 
+              <h5 className='dev_name'><b>Chris Zimmerman</b></h5> <hr />              
               <br />
-              <h5 className='dev_name'>Tyler Davis</h5>
+              <div className='paragraph'>
+                <p className='paragraph'>Chris has always been fascinated with technology and enjoyed the creative process of Computer Programming. He's an Entrepreneur at heart and is always ready to embark on a new adventure. Chris loves to spend his time exploring the outdoors with his wife and two kids. He is extremely outgoing, loves meeting new people, and exploring new places.</p>
+              </div>
             </div>
-            <div>
-              <p className='paragraph'>A former ASCP laboratory scientist, Tyler now enters the world of programming by day, conducts unethical experiments by night.</p>
-          </div>
-          </div>  
-          <div className='parent'>
-            <div className='developer1'>
-              <img className='image' src={Lucie} style={{width:157, align:'center', float: 'right', borderRadius:10}}/>
+            <div className='developer1  center'>
+              <img className='image' src={Tyler} style={{width:350, borderRadius:10}}/>
+              <h5 className='dev_name'><b>Tyler Davis</b></h5><hr />
               <br />
-              <h5 className='dev_name'>Lucie Becz</h5>
+              <div className='paragraph'>
+                <p className='paragraph'>A former ASCP laboratory scientist, Tyler now enters the world of programming by day, conducts unethical experiments by night.</p>
+              </div>
             </div>
-            <div>
-              <p className='paragraph'>Lucie has always been interested in programming but was too busy living with sled dogs on a glacier in Alaska and traveling in the meantime. This last fall she finally decided it was time to buckle down for a bit, and chose to go to DevPoint Labs. Coding has become something she really enjoys and is excited to see where it takes her.</p>
+ 
+            <div className='developer1  center'>
+              <img className='image' src={Lucie} style={{width:265, borderRadius:10}}/>
+              <h5 className='dev_name'><b>Lucie Becz</b></h5><hr />
+              <br />
+              <div className='paragraph'>  
+                <p className='paragraph'>Lucie has always been interested in programming but was too busy living with sled dogs on a glacier in Alaska and traveling in the meantime. This last fall she finally decided it was time to buckle down for a bit, and chose to go to DevPoint Labs. Coding has become something she really enjoys and is excited to see where it takes her.</p>
+              </div>
             </div>
-          </div>
+
         </div>
       </div>
     </div>
