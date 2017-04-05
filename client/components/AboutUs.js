@@ -29,7 +29,7 @@ const AboutUs = () => (
               <h5 className='dev_name'><b>Nathan Stuart</b></h5><hr />            
               <br />
               <div className='center paragraph'>
-                <p className='center paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla euismod posuere. Fusce dui mauris, aliquet ve.</p>
+                <p className='center paragraph'>Nathan grew up in the Pacific Northwest, skiing and hiking regularly in the Cascade and Olympic Mountains. This love of the mountains brought Nathan to Salt Lake, in order to be closer to the mountains and ski better snow. As a former middle school science teacher, Nathan has always had a curious side to him and this curiosity led him to tinkering with HTML and CSS. After a couple months of building basic websites, the fire was lit and Nathan's interest in programming led him to DevPoint Labs, to learn all that he could in order to become a web developer. When not programming, you can find Nathan walking his dog with his wife or heading up Little Cottonwood in search of fresh powder.</p>
               </div>
             </div>
             <div className='developer1  center'>
@@ -45,7 +45,7 @@ const AboutUs = () => (
               <h5 className='dev_name'><b>Tyler Davis</b></h5><hr />
               <br />
               <div className='paragraph'>
-                <p className='paragraph'>A former ASCP laboratory scientist, Tyler now enters the world of programming by day, conducts unethical experiments by night.</p>
+                <p className='paragraph'></p>
               </div>
             </div>
  
