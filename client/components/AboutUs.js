@@ -45,7 +45,7 @@ const AboutUs = () => (
               <h5 className='dev_name'><b>Tyler Davis</b></h5><hr />
               <br />
               <div className='paragraph'>
-                <p className='paragraph'></p>
+                <p className='paragraph'>Tyler developed an appreciation for web development by researching computer programming over the past year, drawn by the industry’s combining of problem solving with creativity. Formerly a medical laboratory scientist, he likes to approach tasks from an experimental viewpoint with an attention to detail.</p>
               </div>
             </div>
  
