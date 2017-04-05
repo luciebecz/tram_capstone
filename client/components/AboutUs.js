@@ -4,7 +4,6 @@ import Lucie from '../images/Lucie.jpg';
 import Tyler from '../images/Tyler.jpg';
 import Nate from '../images/Nate.jpg';
 
-
 const AboutUs = () => (
   <div className='row body_width about_page'>
     <div className='col s12'>
