@@ -56,14 +56,14 @@ p {
 
   height: 100vh;
   // background-image: url('https://0.s3.envato.com/files/167205226/Prev%20PIC%20snow.jpg');
-  background-image: url('http://snow-pictures.com/snowy-mountains/colorado-snow-scenery74.jpg');
+  background-image: url(asset_path('HomeBackground.jpg'));
   background-size: cover;
   // background-image: url('https://cdn.shutterstock.com/shutterstock/videos/3211894/thumb/1.jpg?i10c=img.resize(height:160)');
   color: black;
 }
 
 .home_title {
-  font-size: 160px;
+  font-size: 140px;
   margin-top: 65px;
   float: left;
 }
