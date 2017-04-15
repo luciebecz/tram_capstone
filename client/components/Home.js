@@ -5,8 +5,6 @@ const Home = () => (
   <div className='row body_width home_page'>
     <div className='col s6 home_title'>
       <h1 className='center'><b className='home_title'>T R A M</b></h1><br />
-      <div>
-      </div>
     </div>
     <div className='col s6 home_slogan'>
       <div>

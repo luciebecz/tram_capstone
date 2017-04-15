@@ -119,6 +119,7 @@ p {
 }
 
 .paragraph {
+  text-align: justify;
   font-size: 17px;
   width: 90%;
   margin-left: 4%;
@@ -346,3 +347,72 @@ p {
 .new_snow {
   font-size: 19px;
 }
+
+/* ======================== MEDIA QUERIES ======================================== */
+
+@media (max-width: 375px) {
+  /* snow reports page */
+  div.z-depth-3.center.snow_report_div {
+    width: 100%;
+  }
+}
+
+@media (max-width: 414px) {
+
+  /* user profile page */
+  div.body_width div.trip_loop {
+    width: 100% !important;
+  }
+
+  div.rider_loop col.s6{
+    width: 100% !important;
+    margin-bottom: 4%;
+  }
+}
+/* */
+@media (max-width: 1139px) {
+
+  /* home page */
+  .col.s6.home_title {
+    width: 100%;
+  }
+
+  b.home_title {
+    float: none;
+    margin-top: 170px;
+    width: 100%;
+  }
+
+  .col.s6.home_slogan {
+    width: 100%;
+    margin-top: -130px;
+  }
+
+  a.btn-large.blue-grey.darken-3.home_signup_btn {
+      margin-left: 43%;
+  }
+
+  /* signup page */
+  .row.signup_page .col.s6 {
+    width: 100%;
+  }
+
+  h2.tram_title {
+    text-align: center;
+  }
+
+  .row.signup_page .col.s6 h5 {
+    text-align: center;
+    margin-bottom: 10%;
+  }
+  /* about us page  */
+  .about_page .developer1 {
+    height: 950px;
+  }
+  .z-depth-3.center.snow_report_div {
+    width: 45%;
+    padding: 1%;
+  }
+}
+
+
