@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import TramLogoWhite from '../images/TramLogoWhite.png';
 
 
+
 class MaterialNavbar extends React.Component {
   logout = (e) => {
     e.preventDefault();
@@ -22,17 +23,17 @@ class MaterialNavbar extends React.Component {
     if(auth && auth.isAuthenticated) {
       return(
         <ul>
-        <li><Link to='/about_us'>A B O U T - T R A M</Link></li>
-        <li><Link to='/user_profile'>H O M E</Link></li>
-        <li><a href='#' onClick={this.logout}>L O G O U T</a></li>
+          <li><Link to='/about_us'><b>A B O U T - T R A M</b></Link></li>
+          <li><Link to='/user_profile'><b>H O M E</b></Link></li>
+          <li><a href='#' onClick={this.logout}><b>L O G O U T</b></a></li>
         </ul>
       )
     } else {
       return(
         <ul>
-        <li><Link to='/about_us'>A B O U T - T R A M</Link></li>
-        <li><Link to='/login'>L O G I N</Link></li>
-        {/*<li><Link to='/sign_up'>SIGNUP</Link></li>*/}
+          <li><Link to='/about_us'><b>A B O U T - T R A M</b></Link></li>
+          <li><Link to='/login'><b>L O G I N</b></Link></li>
+          {/*<li><Link to='/sign_up'>SIGNUP</Link></li>*/}
         </ul>
       );
     }

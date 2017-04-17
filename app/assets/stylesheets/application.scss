@@ -324,7 +324,6 @@ p {
   float: left;
   width: 45%;
 }
-/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 /*>>>>>>>>>>>SNOW REPORT PAGE>>>>>>>>>>>>>>>>>>>> */
 
@@ -350,26 +349,6 @@ p {
 
 /* ======================== MEDIA QUERIES ======================================== */
 
-@media (max-width: 375px) {
-  /* snow reports page */
-  div.z-depth-3.center.snow_report_div {
-    width: 100%;
-  }
-}
-
-@media (max-width: 414px) {
-
-  /* user profile page */
-  div.body_width div.trip_loop {
-    width: 100% !important;
-  }
-
-  div.rider_loop col.s6{
-    width: 100% !important;
-    margin-bottom: 4%;
-  }
-}
-/* */
 @media (max-width: 1139px) {
 
   /* home page */
@@ -415,6 +394,58 @@ p {
   }
 }
 
+@media (max-device-width: 1317px) {
+  /* show driver trips page */
+   div.body_width div.trip_details {
+     text-align: center;
+     float: none;
+     width: 100%;
+   }
+
+   div.body_width div.trip_messages {
+     float: none;
+     width: 100%;
+   }
+   /* take inline styling out of googlemaps component and give it class names. Add that styling to all width css. Then make media query for it*/
+
+}
+
+
+@media (max-device-width: 993px) {
+  /* navbar */
+  .nav-logo {
+    margin-left: 30%;
+  }
+}
+
+
+@media (max-device-width: 414px) {
+
+  /* user profile page */
+  div.user_header_name {
+    margin-left: 10%;
+  }
+
+  div.body_width div.trip_loop {
+    width: 100% !important;
+  }
+
+  div.body_width div.rider_loop {
+    width: 100% !important;
+    margin-bottom: 4%;
+  }
+
+}
+
+
+@media (max-device-width: 375px) {
+  /* snow reports page */
+  div.z-depth-3.center.snow_report_div {
+    width: 100%;
+  }
+}
+
+/* */
 
 
 

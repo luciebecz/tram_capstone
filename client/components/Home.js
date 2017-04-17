@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+// import { getUser } from '../actions/user';
 
 const Home = () => (
   <div className='row body_width home_page'>
